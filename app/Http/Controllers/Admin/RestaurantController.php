@@ -11,6 +11,7 @@ use App\Models\Photo;
 use Carbon\Carbon;
 use DB;
 use App\Models\Log;
+use Auth;
 
 class RestaurantController extends Controller
 {
@@ -39,8 +40,9 @@ class RestaurantController extends Controller
 
         DB::table('logs')->insert([
             ['content' => 'Added '.$request->get('name').' in Restaurants at '.\Carbon\Carbon::now()->format('M d, Y h:i a').'',
-             'created_at' =>\Carbon\Carbon::now()->format('Y-m-d'), 
-             'updated_at' =>\Carbon\Carbon::now()->format('Y-m-d')
+            'user_id' => Auth::id,
+            'created_at' =>\Carbon\Carbon::now()->format('Y-m-d'), 
+            'updated_at' =>\Carbon\Carbon::now()->format('Y-m-d')
          ]
         ]);
     // create restaurant with featured image
@@ -143,6 +145,7 @@ class RestaurantController extends Controller
          DB::table('logs')->insert([
             ['content' => 'Updated '.$request->get('name').' in Restaurants at '.\Carbon\Carbon::now()
             ->format('M d, Y h:i a').'',
+            'user_id' => Auth::id,
              'created_at' =>\Carbon\Carbon::now()->format('Y-m-d'), 
              'updated_at' =>\Carbon\Carbon::now()->format('Y-m-d')
          ]
@@ -172,6 +175,7 @@ class RestaurantController extends Controller
 
         DB::table('logs')->insert([
             ['content' => 'Remove '.$restaurants->name.' in Restaurants at '.\Carbon\Carbon::now()->format('M d, Y h:i a').'',
+            'user_id' => Auth::id,
              'created_at' =>\Carbon\Carbon::now()->format('Y-m-d'), 
              'updated_at' =>\Carbon\Carbon::now()->format('Y-m-d')
          ]
@@ -203,6 +207,7 @@ class RestaurantController extends Controller
 
         DB::table('logs')->insert([
         ['content' => 'Restore '.$restaurant1->name.' in Restaurants at '.\Carbon\Carbon::now()->format('M d, Y h:i a').'',
+        'user_id' => Auth::id,
         'created_at' =>\Carbon\Carbon::now()->format('Y-m-d'), 
         'updated_at' =>\Carbon\Carbon::now()->format('Y-m-d')
         ]
