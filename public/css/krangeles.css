@@ -1,0 +1,30 @@
+
+
+
+
+/* modal login button */
+button.btn.btn-info.waves-effect.waves-light {
+    margin-top: 12px;
+    padding-top: 13px;
+    padding-bottom: 0px;
+}
+
+/* modal close button */
+button.btn.btn-outline-info.waves-effect.ml-auto {
+    font-size: 12px;
+}
+
+
+
+
+
+
+.modal-dialog.cascading-modal .modal-c-tabs .nav-tabs {
+    margin: 1.5rem 1rem 0 !important;
+}
+
+/* footer */
+.footer-bottom{
+    bottom:0;
+    width:100%;
+}
