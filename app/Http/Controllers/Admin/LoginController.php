@@ -58,7 +58,7 @@ class LoginController extends Controller
 
 
         DB::table('logs')->insert([
-            ['name' => 'KRL Admin has Log In at '.\Carbon\Carbon::now()->format('M d, Y h:i a').'',
+            ['content' => 'KRL Admin has Log In at '.\Carbon\Carbon::now()->format('M d, Y h:i a').'',
              'created_at' =>\Carbon\Carbon::now()->format('Y-m-d'), 
              'updated_at' =>\Carbon\Carbon::now()->format('Y-m-d')
             ]

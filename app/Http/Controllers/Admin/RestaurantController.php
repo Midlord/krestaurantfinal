@@ -38,7 +38,7 @@ class RestaurantController extends Controller
     {
 
         DB::table('logs')->insert([
-            ['name' => 'Added '.$request->get('name').' in Restaurants at '.\Carbon\Carbon::now()->format('M d, Y h:i a').'',
+            ['content' => 'Added '.$request->get('name').' in Restaurants at '.\Carbon\Carbon::now()->format('M d, Y h:i a').'',
              'created_at' =>\Carbon\Carbon::now()->format('Y-m-d'), 
              'updated_at' =>\Carbon\Carbon::now()->format('Y-m-d')
          ]
@@ -141,7 +141,7 @@ class RestaurantController extends Controller
             ]);
 
          DB::table('logs')->insert([
-            ['name' => 'Updated '.$request->get('name').' in Restaurants at '.\Carbon\Carbon::now()
+            ['content' => 'Updated '.$request->get('name').' in Restaurants at '.\Carbon\Carbon::now()
             ->format('M d, Y h:i a').'',
              'created_at' =>\Carbon\Carbon::now()->format('Y-m-d'), 
              'updated_at' =>\Carbon\Carbon::now()->format('Y-m-d')
@@ -171,7 +171,7 @@ class RestaurantController extends Controller
 
 
         DB::table('logs')->insert([
-            ['name' => 'Remove '.$restaurants->name.' in Restaurants at '.\Carbon\Carbon::now()->format('M d, Y h:i a').'',
+            ['content' => 'Remove '.$restaurants->name.' in Restaurants at '.\Carbon\Carbon::now()->format('M d, Y h:i a').'',
              'created_at' =>\Carbon\Carbon::now()->format('Y-m-d'), 
              'updated_at' =>\Carbon\Carbon::now()->format('Y-m-d')
          ]
@@ -202,7 +202,7 @@ class RestaurantController extends Controller
         $restaurant1 = Restaurant::findOrfail($id);
 
         DB::table('logs')->insert([
-        ['name' => 'Restore '.$restaurant1->name.' in Restaurants at '.\Carbon\Carbon::now()->format('M d, Y h:i a').'',
+        ['content' => 'Restore '.$restaurant1->name.' in Restaurants at '.\Carbon\Carbon::now()->format('M d, Y h:i a').'',
         'created_at' =>\Carbon\Carbon::now()->format('Y-m-d'), 
         'updated_at' =>\Carbon\Carbon::now()->format('Y-m-d')
         ]
