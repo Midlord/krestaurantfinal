@@ -17,12 +17,13 @@ class CreateRestaurantsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
             $table->string('name')->unique();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('latitude');
             $table->string('longitude');
-            $table->string('opening');
-            $table->string('closing');
+            $table->string('opening')->nullable();
+            $table->string('closing')->nullable();
             $table->text('image');
+            $table->text('url')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

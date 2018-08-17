@@ -9,7 +9,7 @@ class Comment extends Model
 {
     protected $fillable = [
       'rate', 
-      'comment',
+      'message',
       'user_id',
       'restaurant_id'
     ];
